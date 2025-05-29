@@ -1,0 +1,26 @@
+# Docker Volumes & Container-Daten
+volumes/
+*_data/
+*.sql
+
+# Umgebungsvariablen & sensible Daten
+.env
+*.env
+
+# Logs und temporäre Dateien
+*.log
+*.tmp
+
+# Betriebssystemspezifisches
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# VS Code / Editor-Dateien
+.vscode/
+.idea/
+*.code-workspace
+
+# Backup-Dateien
+*.bak
+*.zip

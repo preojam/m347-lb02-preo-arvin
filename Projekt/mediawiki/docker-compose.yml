@@ -14,6 +14,7 @@ services:
       - db
     volumes:
       - mediawiki_data:/var/www/html
+      - ./LocalSettings.php:/var/www/html/LocalSettings.php
 
   db:
     image: mariadb:10.5

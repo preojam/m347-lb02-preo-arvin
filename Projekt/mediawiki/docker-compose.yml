@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   mediawiki:
     image: mediawiki:latest
@@ -15,9 +13,11 @@ services:
     volumes:
       - mediawiki_data:/var/www/html
       - ./LocalSettings.php:/var/www/html/LocalSettings.php
+    restart: always
 
   db:
     image: mariadb:10.5
+    hostname: mediaWikiDb
     restart: always
     environment:
       MYSQL_DATABASE: my_wiki

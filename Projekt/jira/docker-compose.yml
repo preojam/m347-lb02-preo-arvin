@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   jira:
     image: atlassian/jira-software:latest
@@ -14,7 +12,8 @@ services:
       - db
     volumes:
       - jira_home:/var/atlassian/application-data/jira
-
+    restart: always
+    
   db:
     image: postgres:13
     environment:
@@ -23,6 +22,7 @@ services:
       POSTGRES_PASSWORD: jirapass
     volumes:
       - jira_db_data:/var/lib/postgresql/data
+    restart: always
 
 volumes:
   jira_home:

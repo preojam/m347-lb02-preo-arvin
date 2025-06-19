@@ -21,7 +21,8 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "Doeckervention";
+$wgSitename = "doeckervention";
+$wgMetaNamespace = "Doeckervention";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
@@ -40,7 +41,7 @@ $wgResourceBasePath = $wgScriptPath;
 ## or else you'll overwrite your logo when you upgrade!
 $wgLogos = [
 	'1x' => "$wgResourceBasePath/resources/assets/change-your-logo.svg",
-	'icon' => "$wgResourceBasePath/resources/assets/change-your-logo.svg",
+	'icon' => "$wgResourceBasePath/resources/assets/change-your-logo-icon.svg",
 ];
 
 ## UPO means: this is also a user preference option
@@ -57,7 +58,7 @@ $wgEmailAuthentication = true;
 
 ## Database settings
 $wgDBtype = "mysql";
-$wgDBserver = "db";
+$wgDBserver = "mediaWikiDb";
 $wgDBname = "my_wiki";
 $wgDBuser = "wikiuser";
 $wgDBpassword = "wikipass";
@@ -74,7 +75,7 @@ $wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 $wgSharedTables[] = "actor";
 
 ## Shared memory settings
-$wgMainCacheType = CACHE_ACCEL;
+$wgMainCacheType = CACHE_NONE;
 $wgMemCachedServers = [];
 
 ## To enable image uploads, make sure the 'images' directory
@@ -89,7 +90,7 @@ $wgUseInstantCommons = false;
 # Periodically send a pingback to https://www.mediawiki.org/ with basic data
 # about this MediaWiki instance. The Wikimedia Foundation shares this data
 # with MediaWiki developers to help guide future development efforts.
-$wgPingback = true;
+$wgPingback = false;
 
 # Site language code, should be one of the list in ./includes/languages/data/Names.php
 $wgLanguageCode = "de";
@@ -102,14 +103,14 @@ $wgLocaltimezone = "UTC";
 ## be publicly accessible from the web.
 #$wgCacheDirectory = "$IP/cache";
 
-$wgSecretKey = "91f055a657879fd4db63dd42db5ac7f60ab2fbb75992e3a903f44b5ea0fef5b3";
+$wgSecretKey = "6a7fee9d06592378528764523af34fad5e8bd69e4db40d425cba90e60f26aba4";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "e6e0e1a57891bd11";
+$wgUpgradeKey = "3d3190ba82a086de";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -122,13 +123,9 @@ $wgRightsIcon = "";
 # Path to the GNU diff3 utility. Used for conflict resolution.
 $wgDiff3 = "/usr/bin/diff3";
 
-# The following permissions were set based on your choice in the installer
-$wgGroupPermissions["*"]["createaccount"] = false;
-$wgGroupPermissions["*"]["edit"] = false;
-
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, e.g. 'vector' or 'monobook':
-$wgDefaultSkin = "timeless";
+$wgDefaultSkin = "vector-2022";
 
 # Enabled skins.
 # The following skins were automatically enabled:
